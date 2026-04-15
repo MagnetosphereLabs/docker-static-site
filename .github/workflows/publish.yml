@@ -28,7 +28,7 @@ jobs:
       - name: Set TAG
         run: echo TAG=${GITHUB_REF#refs/tags/} >> $GITHUB_ENV
 
-      - name: Publish
+      - name: Publish ${{ matrix.svc }}
         uses: docker/build-push-action@v3
         with:
           file: Dockerfile
